@@ -1,8 +1,39 @@
 <h2>Products</h2>
 
+<!-- *ngFor is a "structural directive". Structural directives shape or reshape the DOM's structure, typically by adding, removing, and manipulating the elements to which they are attached. Any directive with an * is a structural directive. -->
+<div *ngFor="let product of products">
 
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
--->
+
+    <!-- the interpolation syntax {{ }}. Interpolation renders a property's value as text.-->
+   
+   
+<!-- Add the anchor now, and set the anchor's title to be the product's name by using the property binding [ ] syntax, as shown below -->
+<!--In the preview pane, hover over the displayed product name to see the bound name property value. They are the same. Interpolation {{ }} lets you render the property value as text; property binding [ ] lets you use the property value in a template expression.-->
+<a [title]="product.name + ' details'">
+    <h3>
+        {{ product.name }}
+    </h3>
+    </a>
+
+    <!-- This is *ngIf, not *ngFor, this is an if statement.  No description div is displayed for the last phone because it's description field is empty-->
+    <p *ngIf="product.description">
+        Description: {{ product.description }}
+      </p>
+
+      <!-- Event binding is done by using ( ) around the event, as shown below -->
+      <button (click)="share()">
+        Share
+      </button>s
+
+
+      <!-- The new product alert component takes a product as input from the product list. With that input, it shows or hides the "Notify Me" 
+        button, based on the price of the product. The Phone XL price is over $700, so the "Notify Me" button appears on that product.
+      "product" is where the data is "gotten" and [product] is where it's sent to the product-alerts component and the logic is performed there.
+      -->
+      <app-product-alerts
+      [product]="product"
+      (notify)="onNotify()">
+    </app-product-alerts>
+
+</div>
+

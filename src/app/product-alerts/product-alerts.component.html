@@ -1,0 +1,7 @@
+
+<!-- This receives the price and checks it-->
+<!--( ) is used for an event binding, to alert "notify.emit" -->
+
+<p *ngIf="product.price > 700">
+  <button (click)="notify.emit()">Notify Me</button>
+</p>
