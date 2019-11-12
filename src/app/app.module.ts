@@ -1,3 +1,5 @@
+/*This is basically the routing file, which  connects URLs to destinations */
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -7,20 +9,31 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+
+  /* In app.module.ts, add a route for product details, with a path of products/:productId and
+  ProductDetailsComponent for the component.  */
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
+
+      // This is the route for the homepage, hence ''
       { path: '', component: ProductListComponent },
+
+      //This is the route to display product details when they click on a product from the homepage
+      { path: 'products/:productId', component: ProductDetailsComponent },
+
     ])
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
     ProductListComponent,
-    ProductAlertsComponent
+    ProductAlertsComponent,
+    ProductDetailsComponent
   ],
   bootstrap: [ AppComponent ]
 })

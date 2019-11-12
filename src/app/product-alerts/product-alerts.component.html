@@ -1,12 +1,14 @@
-
-
-
-<!--     *ngFor is a "structural directive". Structural directives shape or reshape the DOM's structure, 
-  typically by adding, removing, and manipulating the elements to which they are attached. 
+<!--     *ngFor is a "structural directive". Structural directives shape or reshape the DOM's structure,
+  typically by adding, removing, and manipulating the elements to which they are attached.
   Any directive with an asterisk, *, is a structural directive.     -->
 
-<!--     This receives the price and checks it    -->
+<!--     This receives the price and checks if it is above 700, in which case it displays the entire element is
+displayed, otherwise it is hidden -->
+
 <!--     ( ) is used for an event binding, to alert "notify.emit"     -->
+
+
+<!--  Define the view for the new product alert component. -->
 
 <p *ngIf="product.price > 700">
   <button (click)="notify.emit()">Notify Me</button>

@@ -3,21 +3,35 @@
 <!-- *ngFor is a "structural directive". Structural directives shape or reshape the DOM's structure, typically by adding, removing, and manipulating the elements to which they are attached. Any directive with an * is a structural directive. -->
 <!-- This div repeats itself for each element in 'products' -->
 
-<div *ngFor="let product of products">
 
+<!-- this assigns each index in the products array to the 
+  productId variable when iterating over the list 
+I don't know why we can't just do product.index
+-->
+<div *ngFor="let product of products; index as productId">
 
-    <!-- the interpolation syntax {{ }}. Interpolation renders a property's value as text.-->
-
+<!-- the interpolation syntax {{ }}. Interpolation renders a property's value as text.-->
 
 <!-- Add the anchor now, and set the anchor's title to be the product's name by using the property binding [ ] syntax, as shown below -->
 <!--In the preview pane, hover over the displayed product name to see the bound name property value. They are the same. Interpolation {{ }} lets you render the property value as text; property binding [ ] lets you use the property value in a template expression.-->
-<a [title]="product.name + ' details'">
-    <h3>
-        {{ product.name }}
-    </h3>
-    </a>
+
+<!-- The RouterLink directive gives the router control over the anchor 
+  element. In this case, the route (URL) contains one fixed 
+  segment (/products) and the final segment is variable, inserting 
+  the id property of the current product. For example, the URL 
+  for a product with an id of 1 will be similar 
+  to https://getting-started-myfork.stackblitz.io/products/1.
+-->
+
+
+<h3>
+  <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+    {{ product.name }}
+  </a>
+</h3>
 
     <!-- This is *ngIf, not *ngFor, this is an if statement.  No description div is displayed for the last phone because it's description field is empty-->
+    
     <p *ngIf="product.description">
         Description: {{ product.description }}
       </p>
@@ -36,7 +50,21 @@
       -->
 
       <!-- Event binding is done by using ( ) around the event, as shown below.
-      This connects to 'share()' which is defined in product-list.component.tx -->
+
+This connects to 'share()' which is defined in product-list.component.tx
+
+To make the "Notify Me" button work, you need to configure two things:
+
+the product alert component to emit an event when the user clicks "Notify Me"
+the product list component to act on that event
+Open product-alerts.component.ts.
+
+Import Output and EventEmitter from @angular/core:
+
+    -->
+
+
+
       <app-product-alerts
       [product]="product"
       (notify)="onNotify()">
