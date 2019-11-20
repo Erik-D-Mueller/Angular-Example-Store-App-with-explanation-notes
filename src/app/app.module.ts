@@ -10,6 +10,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CartComponent } from './cart/cart.component';
 
   /* In app.module.ts, add a route for product details, with a path of products/:productId and
   ProductDetailsComponent for the component.  */
@@ -26,6 +27,9 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
       //This is the route to display product details when they click on a product from the homepage
       { path: 'products/:productId', component: ProductDetailsComponent },
 
+// This is the route for checkout, or viewing items in the cart'
+{ path: 'cart', component: CartComponent},
+
     ])
   ],
   declarations: [
@@ -33,7 +37,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     TopBarComponent,
     ProductListComponent,
     ProductAlertsComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CartComponent
   ],
   bootstrap: [ AppComponent ]
 })
