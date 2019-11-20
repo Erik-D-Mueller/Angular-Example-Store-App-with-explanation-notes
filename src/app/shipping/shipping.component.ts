@@ -20,7 +20,6 @@ export class ShippingComponent implements OnInit {
 
   ) {
 
-
   }
 
   ngOnInit() {
