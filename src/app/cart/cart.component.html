@@ -13,19 +13,20 @@
 
 </div>
 
-// Use a formGroup property binding to bind the checkoutForm to the form tag in the template. Also include a "Purchase" button to submit the form.
-//On the form tag, use an ngSubmit event binding to listen for the form submission and call the onSubmit() method with the checkoutForm value.
+ <!--Use a formGroup property binding to bind the checkoutForm to the form tag in the template. Also include a "Purchase" button to submit the form.
+on the form tag, use an ngSubmit event binding to listen for the form submission and call the onSubmit() method with the checkoutForm value. -->
+
 <form [formGroup] = "checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
 
-
-
-  /*
+  <!--
 
   Add input fields for name and address. Use the formControlName attribute
   binding to bind the checkoutForm form controls for name and
   address to their input fields.
 
-  */
+  -->
+
+  
     <div>
         <label for="name">
           Name
