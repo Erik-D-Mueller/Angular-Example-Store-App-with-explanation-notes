@@ -3,6 +3,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+
+import {FormsModule } from '@angular/forms';
+
+// the formbuilder service is inside this module, that's why we import it
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -15,7 +19,9 @@ import { CartComponent } from './cart/cart.component';
 // HttpClient is used for communicating with APIs and comes from HttpClientModule
 // The HttpClient service is what you inject into your services to fetch data and interact with external APIs and resources.
 import { HttpClientModule } from '@angular/common/http';
-import { ShippingComponent } from './shipping/shipping.component'
+import { ShippingComponent } from './shipping/shipping.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { Form1Component } from './form1/form1.component'
 
   /* In app.module.ts, add a route for product details, with a path of products/:productId and
   ProductDetailsComponent for the component.
@@ -28,10 +34,11 @@ import { ShippingComponent } from './shipping/shipping.component'
     //Adding HttpClientModule to the imports array of the app module (@NgModule) registers the Angulars HTTP client providers globally
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     RouterModule.forRoot([
 
       // This is the route for the homepage, hence ''
-      { path: '', component: ProductListComponent },
+      { path: '', component: WelcomeComponent },
 
       //This is the route to display product details when they click on a product from the homepage
       { path: 'products/:productId', component: ProductDetailsComponent },
@@ -50,7 +57,9 @@ import { ShippingComponent } from './shipping/shipping.component'
     ProductAlertsComponent,
     ProductDetailsComponent,
     CartComponent,
-    ShippingComponent
+    ShippingComponent,
+    WelcomeComponent,
+    Form1Component
   ],
   bootstrap: [ AppComponent ]
 })

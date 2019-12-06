@@ -18,8 +18,6 @@ constructor(
   private http: HttpClient
 ) {}
 
-
-
 addToCart(product){
 this.items.push(product);
 }

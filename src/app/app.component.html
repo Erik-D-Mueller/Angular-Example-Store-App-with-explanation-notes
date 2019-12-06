@@ -1,10 +1,12 @@
- <app-top-bar></app-top-bar> 
+ <!-- app.component is by default the "homepage" that's loaded, then the router has control below -->
+ <app-top-bar></app-top-bar>
 
+ <!-- This is where the router "inserts things" -->
 <div class="container">
   <router-outlet></router-outlet>
 </div>
 
-<!-- 
+<!--
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license

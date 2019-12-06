@@ -26,76 +26,21 @@ on the form tag, use an ngSubmit event binding to listen for the form submission
 
   -->
 
-    <div >
+    <div class = 'form-group'>
         <label for="name">
           Name (Ex: Jane Doe)
         </label>
         <input id="name" type="text" formControlName="name">
       </div>
 
-      <div >
+      <div class = 'form-group'>
         <label for="address">
           Address
         </label>
         <input id="address" type="text" formControlName="address">
       </div>
 
-
-      <div >
-        <label for="custDestAddressLine1">
-          Address Line 1: (Ex: 123 Main St)
-        </label>
-        <input id="custDestAddressLine1" type="text" formControlName="custDestAddressLine1">
-      </div>
-
-      <div >
-        <label for="custDestAddressLine2">
-          Address Line 2: (Ex: Minato Ko Tokyo)
-        </label>
-        <input id="custDestAddressLine2" type="text" formControlName="custDestAddressLine2">
-      </div>
-
-      <div >
-        <label for="custDestAddressLine3">
-          Address Line 3: (Ex: Japan)
-        </label>
-        <input id="custDestAddressLine3" type="text" formControlName="custDestAddressLine3">
-      </div>
-
-      <div >
-        <label for="custDestAddressLine4">
-          Address Line 4: (if necesary)
-        </label>
-        <input id="custDestAddressLine4" type="text" formControlName="custDestAddressLine4">
-      </div>
-
-      <div >
-        <label for="custDestAddressLine5">
-          Address Line 5: (if necesary)
-        </label>
-        <input id="custDestAddressLine5" type="text" formControlName="custDestAddressLine5">
-      </div>
-
-      <button class="button" type="submit">Purchase</button>
-
-</form>
-
-
-
-
-
-<!--
-
-
-
-
-
-
-
-
-
-
-        <div class = 'form-group'>
+      <div class = 'form-group'>
         <label for="custDestAddressLine1">
           Address Line 1: (Ex: 123 Main St)
         </label>
@@ -132,7 +77,4 @@ on the form tag, use an ngSubmit event binding to listen for the form submission
 
   <button class="button" type="submit">Purchase</button>
 
-
-
-
-    -->
+</form>
